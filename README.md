@@ -1,6 +1,6 @@
-# docker-openstackclient
+# docker-cephclient
 
-[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-osism%2Fopenstackclient-blue.svg)](https://hub.docker.com/r/osism/openstackclient/)
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-osism%2Fcephclient-blue.svg)](https://hub.docker.com/r/osism/cephclient/)
 
 License
 -------
