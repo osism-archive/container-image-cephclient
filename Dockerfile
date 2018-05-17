@@ -27,6 +27,7 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y \
         ceph \
+        fio \
     && groupadd -g $GROUP_ID dragon \
     && useradd -g dragon -u $USER_ID -m -d /home/dragon dragon \
     && apt-get clean \
