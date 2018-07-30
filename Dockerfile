@@ -5,7 +5,7 @@ FROM ubuntu:16.04
 LABEL maintainer="Betacloud Solutions GmbH (https://www.betacloud-solutions.de)"
 
 ARG VERSION
-ENV VERSION ${VERSION:-kraken}
+ENV VERSION ${VERSION:-luminous}
 
 ENV DEBIAN_FRONTEND noninteractive
 
