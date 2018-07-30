@@ -19,6 +19,7 @@ env:
   matrix:
     - VERSION=kraken
     - VERSION=luminous
+    - VERSION=mimic
 
 script:
   - bash scripts/build.sh
