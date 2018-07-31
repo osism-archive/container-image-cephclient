@@ -17,7 +17,6 @@ env:
   global:
     - REPOSITORY=osism/cephclient
   matrix:
-    - VERSION=kraken
     - VERSION=luminous
     - VERSION=mimic
 

@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 LABEL maintainer="Betacloud Solutions GmbH (https://www.betacloud-solutions.de)"
 
 ARG VERSION
@@ -20,7 +20,7 @@ RUN apt-get update \
         software-properties-common \
         wget \
     && wget -q -O- https://download.ceph.com/keys/release.asc | apt-key add - \
-    && apt-add-repository "deb https://download.ceph.com/debian-$VERSION/ xenial main" \
+    && apt-add-repository "deb https://download.ceph.com/debian-$VERSION/ bionic main" \
     && apt-get update \
     && apt-get install -y \
         ceph \
