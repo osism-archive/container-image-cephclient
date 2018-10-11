@@ -31,4 +31,4 @@ docker build \
     --label "io.osism.${REPOSITORY#osism/}=$HASH_REPOSITORY" \
     --tag "$REPOSITORY:$VERSION" \
     --squash \
-    $BUID_OPTS .
+    $BUILD_OPTS .
