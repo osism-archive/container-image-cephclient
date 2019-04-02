@@ -10,6 +10,7 @@ env:
   matrix:
     - VERSION=luminous
     - VERSION=mimic
+    - VERSION=nautilus
 
 script:
   - bash scripts/build.sh
