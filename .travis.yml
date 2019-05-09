@@ -1,5 +1,6 @@
 ---
-language: python
+dist: xenial
+language: generic
 
 before_install:
   - scripts/travis.sh
@@ -24,3 +25,4 @@ notifications:
       - "irc.freenode.org#osism"
     template:
       - "%{result} %{repository_slug}: %{commit_subject} %{build_url}"
+    skip_join: true

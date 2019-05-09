@@ -4,7 +4,7 @@ set -x
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
 sudo apt -y install docker-ce pass
-echo 'DOCKER_OPTS="--experimental"' | sudo tee /etc/default/docker
+echo '{ "experimental": true }' | sudo tee /etc/docker/daemon.json
 sudo service docker restart
 
 curl -fsSlL https://github.com/docker/docker-credential-helpers/releases/download/v0.6.0/docker-credential-pass-v0.6.0-amd64.tar.gz | sudo tar xf - -C /usr/local/bin
