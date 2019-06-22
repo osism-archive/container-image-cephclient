@@ -30,6 +30,7 @@ RUN apt-get update \
     && useradd -g dragon -u $USER_ID -m -d /home/dragon dragon \
     && apt-get clean \
     && apt-get purge -y lib*-dev \
+    && apt-get autoremove -y \
     && mkdir /configuration \
     && rm -rf \
       /var/lib/apt/lists/* \
