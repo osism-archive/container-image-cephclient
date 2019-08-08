@@ -23,6 +23,7 @@ RUN apt-get update \
     && apt-add-repository "deb https://download.ceph.com/debian-$VERSION/ bionic main" \
     && apt-get update \
     && apt-get install -y \
+        dumb-init \
         ceph \
         fio \
         vim \
@@ -40,4 +41,5 @@ USER dragon
 
 VOLUME ["/etc/ceph"]
 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD ["/run.sh"]
