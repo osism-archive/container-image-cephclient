@@ -11,20 +11,22 @@ ENV GROUP_ID ${GROUP_ID:-45000}
 
 USER root
 
-ADD files/run.sh /run.sh
+COPY files/run.sh /run.sh
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y \
+    && apt-get install --no-install-recommends -y \
         apt-transport-https \
+        gpg-agent \
         software-properties-common \
         wget \
     && wget -q -O- https://download.ceph.com/keys/release.asc | apt-key add - \
     && apt-add-repository "deb https://download.ceph.com/debian-$VERSION/ bionic main" \
     && apt-get update \
-    && apt-get install -y \
-        dumb-init \
+    && apt-get install --no-install-recommends -y \
         ceph \
+        dumb-init \
         fio \
         vim \
     && groupadd -g $GROUP_ID dragon \

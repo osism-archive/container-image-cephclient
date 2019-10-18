@@ -14,6 +14,7 @@ env:
     - VERSION=nautilus
 
 script:
+  - bash scripts/lint.sh
   - bash scripts/build.sh
 
 after_success:
