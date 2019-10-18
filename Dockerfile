@@ -32,7 +32,6 @@ RUN apt-get update \
     && groupadd -g $GROUP_ID dragon \
     && useradd -g dragon -u $USER_ID -m -d /home/dragon dragon \
     && apt-get clean \
-    && apt-get purge -y lib*-dev \
     && apt-get autoremove -y \
     && mkdir /configuration \
     && rm -rf \
