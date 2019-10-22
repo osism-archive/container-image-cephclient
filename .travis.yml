@@ -13,8 +13,10 @@ env:
     - VERSION=mimic
     - VERSION=nautilus
 
-script:
+before_script:
   - bash scripts/lint.sh
+
+script:
   - bash scripts/build.sh
 
 after_success:
