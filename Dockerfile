@@ -18,6 +18,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
         apt-transport-https \
+        bash-completion \
         gpg-agent \
         software-properties-common \
         wget \
