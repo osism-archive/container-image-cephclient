@@ -12,11 +12,15 @@ set -x
 # Set default values
 
 BUILD_OPTS=${BUILD_OPTS:-}
-HASH_REPOSITORY=$(git rev-parse --short HEAD)
+CREATED=$(date --rfc-3339=ns)
+REVISION=$(git rev-parse --short HEAD)
+VERSION=${VERSION:-latest}
 
 docker build \
     --build-arg "VERSION=$VERSION" \
-    --label "io.osism.${REPOSITORY#osism/}=$HASH_REPOSITORY" \
     --tag "$REPOSITORY:$VERSION" \
+    --label "org.opencontainers.image.created=$CREATED" \
+    --label "org.opencontainers.image.revision=$REVISION" \
+    --label "org.opencontainers.image.version=$VERSION" \
     --squash \
     $BUILD_OPTS .
