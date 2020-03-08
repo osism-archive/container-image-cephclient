@@ -12,6 +12,7 @@ env:
     - VERSION=luminous
     - VERSION=mimic
     - VERSION=nautilus
+    - VERSION=octopus
 
 before_script:
   - bash scripts/lint.sh
