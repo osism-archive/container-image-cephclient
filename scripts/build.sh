@@ -11,8 +11,8 @@ set -x
 
 # Set default values
 
-BUILD_OPTS=${BUILD_OPTS:-}
 CREATED=$(date --rfc-3339=ns)
+BUILD_OPTS=${BUILD_OPTS:-}
 REVISION=$(git rev-parse --short HEAD)
 VERSION=${VERSION:-latest}
 

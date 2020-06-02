@@ -1,5 +1,5 @@
 ---
-- git: https://github.com/osism/travis.git
+- git: https://github.com/osism/travis-master.git
   version: master
   files:
     - src: docker/gilt.yml
