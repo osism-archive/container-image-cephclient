@@ -26,11 +26,3 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
-
-notifications:
-  irc:
-    channels:
-      - "irc.freenode.org#osism"
-    template:
-      - "%{result} %{repository_slug}: %{commit_subject} %{build_url}"
-    skip_join: true
