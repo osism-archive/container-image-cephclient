@@ -6,21 +6,27 @@ set -x
 # Available environment variables
 #
 # BUILD_OPTS
+# DOCKER_REGISTRY
 # REPOSITORY
 # VERSION
 
 # Set default values
 
-CREATED=$(date --rfc-3339=ns)
 BUILD_OPTS=${BUILD_OPTS:-}
+CREATED=$(date --rfc-3339=ns)
+DOCKER_REGISTRY=${DOCKER_REGISTRY:-quay.io}
 REVISION=$(git rev-parse --short HEAD)
 VERSION=${VERSION:-latest}
 
-docker build \
+if [[ -n $DOCKER_REGISTRY ]]; then
+    REPOSITORY="$DOCKER_REGISTRY/$REPOSITORY"
+fi
+
+docker buildx build \
+    --load \
     --build-arg "VERSION=$VERSION" \
     --tag "$REPOSITORY:$VERSION" \
     --label "org.opencontainers.image.created=$CREATED" \
     --label "org.opencontainers.image.revision=$REVISION" \
     --label "org.opencontainers.image.version=$VERSION" \
-    --squash \
     $BUILD_OPTS .

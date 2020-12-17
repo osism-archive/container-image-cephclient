@@ -1,5 +1,7 @@
+---
 name: PR labeler
-on:
+
+"on":
   pull_request:
     types: [opened]
 

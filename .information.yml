@@ -1,7 +1,0 @@
----
-docker_image_name: cephclient
-versions:
-  - luminous
-  - mimic
-  - nautilus
-  - octopus
