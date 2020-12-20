@@ -5,7 +5,7 @@ ARG VERSION=mimic
 ARG USER_ID=45000
 ARG GROUP_ID=45000
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 USER root
 
