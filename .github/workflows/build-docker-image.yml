@@ -26,6 +26,7 @@ jobs:
           - luminous
           - nautilus
           - octopus
+          - pacific
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
