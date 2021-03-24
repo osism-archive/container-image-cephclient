@@ -24,7 +24,6 @@ jobs:
       matrix:
         ceph_version:
           - luminous
-          - mimic
           - nautilus
           - octopus
     steps:
