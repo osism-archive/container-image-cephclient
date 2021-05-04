@@ -1,4 +1,4 @@
-ARG UBUNTU_VERSION=18.04
+ARG UBUNTU_VERSION=20.04
 FROM ubuntu:${UBUNTU_VERSION}
 
 ARG VERSION=octopus
@@ -22,7 +22,7 @@ RUN apt-get update \
         software-properties-common \
         wget \
     && wget -q -O- https://download.ceph.com/keys/release.asc | apt-key add - \
-    && apt-add-repository "deb https://download.ceph.com/debian-$VERSION/ bionic main" \
+    && apt-add-repository "deb https://download.ceph.com/debian-$VERSION/ focal main" \
     && apt-get update \
     && apt-get install --no-install-recommends -y \
         ceph \
