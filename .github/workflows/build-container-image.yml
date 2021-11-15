@@ -47,4 +47,6 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           VERSION: ${{ matrix.ceph_version }}
           REPOSITORY: osism/cephclient
-        if: github.ref == 'refs/heads/main'
+        if: |
+          github.repository == 'osism/container-image-cephclient' &&
+          github.ref == 'refs/heads/main'
